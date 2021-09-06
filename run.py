@@ -1,6 +1,7 @@
 import os
-from flask import Flask, render_template, redirect, request, session, url_for
-from flask_pymongo install PyMongo
+from flask import Flask, render_template,
+redirect, request, session, url_for
+from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
     import env
@@ -24,7 +25,7 @@ def index():
 
 # Retrieve recipe data from mongodb
 def get_recipes():
-    recipe = list(mongo.db.recipes.find())
+    recipe = list(mongo.db.recipe_project_2.find())
     print(recipe)
     return render_template("recipes.html", recipes=recipe)
 
