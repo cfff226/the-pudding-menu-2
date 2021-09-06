@@ -37,7 +37,16 @@ body {
 /* registration page */
 
 .register-form-row {
-    margin-left: 30%;
+    margin-left: 35%;
+    margin-top: 5%;
+    background-color: unset;
+}
+
+/* login page */
+
+.login-form-row {
+    margin-left: 35%;
+    margin-top: 5%;
     background-color: unset;
 }
 
