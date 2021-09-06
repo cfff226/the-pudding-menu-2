@@ -22,12 +22,12 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html", page_title="Home")
 
-
+@app.route('/get_recipes')
 # Retrieve recipe data from mongodb
 def get_recipes():
     recipe = list(mongo.db.recipe_project_2.find())
     print(recipe)
-    return render_template("recipes.html", recipes=recipe)
+    return render_template("get_recipes.html", recipes=recipe)
 
 
 if __name__ == "__main__":
