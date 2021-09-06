@@ -22,6 +22,13 @@ def index():
     return render_template("index.html", page_title="Home")
 
 
+# Retrieve recipe data from mongodb
+def get_recipes():
+    recipe = list(mongo.db.recipes.find())
+    print(recipe)
+    return render_template("recipes.html", recipes=recipe)
+
+
 if __name__ == "__main__":
     app.run(
         host=os.environ.get("IP", "0,0,0,0"),
