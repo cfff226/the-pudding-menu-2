@@ -1,9 +1,11 @@
 
 
 html {
-    background-color: black;
     color: white;
     font-family: 'Rubik', sans-serif;
+}
+
+body {
     background: url("https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80") no-repeat center center fixed; 
 }
 
@@ -31,3 +33,11 @@ html {
     padding: 2px 15px 15px 15px;
     margin-top: 2%;
 }
+
+/* registration page */
+
+.register-form-row {
+    margin-left: 30%;
+    background-color: unset;
+}
+
