@@ -34,19 +34,26 @@ body {
     margin-top: 2%;
 }
 
+/* page titles */
+
+.page-title {
+    margin-left: 43%;
+    margin-top: 2%;
+}
+
 /* registration page */
 
 .register-form-row {
-    margin-left: 35%;
-    margin-top: 5%;
+    margin-left: 40%;
+    margin-top: 2%;
     background-color: unset;
 }
 
 /* login page */
 
 .login-form-row {
-    margin-left: 35%;
-    margin-top: 5%;
+    margin-left: 40%;
+    margin-top: 2%;
     background-color: unset;
 }
 
