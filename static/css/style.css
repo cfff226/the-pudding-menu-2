@@ -60,6 +60,16 @@ body {
 
 /* recipe page */
 
+
+
 .recipe-card-body > .card-text {
-    text-align: right;
+    width: 600px;
+    text-align: center;
 }
+
+.recipe-card-img {
+    height: 400px;
+    width: 400px;
+}
+
+
