@@ -57,3 +57,9 @@ body {
     background-color: unset;
 }
 
+
+/* recipe page */
+
+.recipe-card-body > .card-text {
+    text-align: right;
+}

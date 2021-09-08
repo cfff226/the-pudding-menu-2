@@ -29,7 +29,7 @@ def index():
 def get_recipes():
     recipe = list(mongo.db.recipes.find())
     print(recipe)
-    return render_template("recipes.html")
+    return render_template("recipes.html", page_title="Recipes", recipes=recipe)
 
 
 @app.route("/register", methods=["GET", "POST"])

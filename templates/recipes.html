@@ -1,9 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="overlay"></div>
 <h1 class="page-title">{{ page_title }}</h1>
 
-
+!-- Display all recipes -->
+<!-- If the amount of recipes is greater than 0 -->
+<!-- For loop to display all recipes from mongodb -->
+{% for recipe in recipes %}
+<div class="card mb-3" style="max-width: 1000px;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img src="{{ recipe.dessert_image }}" class="recipe-card-img" alt="An image of {{ recipe.dessert_name }}">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ recipe.dessert_name }}</h5>
+                <p class="card-text">
+                    <!-- For loop to loop through ingredients -->
+                    <h5>Ingredients</h5>
+                    {% for ingredient in recipe.dessert_ingredients %}
+                    <p>{{ ingredient }}</p>
+                    <!-- Close loop -->
+                    {% endfor %}
+                    </p>
+                </div>
+                <a href="#" class="btn btn-primary">METHOD</a>
+            </div>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+</div>
+</div>
+{% endfor %}
 
 
 
