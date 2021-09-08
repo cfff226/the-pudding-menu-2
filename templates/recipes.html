@@ -7,13 +7,13 @@
 <!-- If the amount of recipes is greater than 0 -->
 <!-- For loop to display all recipes from mongodb -->
 {% for recipe in recipes %}
-<div class="card mb-12" style="max-width: 900px;">
+<div class="card mb-3" style="max-width: 1000px;">
     <div class="row no-gutters">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <img src="{{ recipe.dessert_image }}" class="recipe-card-img" alt="An image of {{ recipe.dessert_name }}">
         </div>
-        <div class="col-md-6">
-            <div class="recipe-card-body">
+        <div class="col-md-8">
+            <div class="card-body">
                 <h5 class="card-title">{{ recipe.dessert_name }}</h5>
                 <p class="card-text">
                     <!-- For loop to loop through ingredients -->

@@ -42,6 +42,10 @@ def login():
     return render_template("login.html", page_title="Login")
 
 
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    return render_template("profile.html", page_title="Profile")
+
 
 if __name__ == "__main__":
     app.run(
