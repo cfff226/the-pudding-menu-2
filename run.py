@@ -62,6 +62,14 @@ def login():
     return render_template("login.html", page_title="Login")
 
 
+@app.route("/logout")
+def logout():
+    # Remove user from session cookies
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login", page_title="Login Page"))
+
+
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
     return render_template("profile.html", page_title="Profile")
