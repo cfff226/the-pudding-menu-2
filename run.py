@@ -34,7 +34,14 @@ def get_recipes():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    return render_template("register.html", page_title="Register")
+    if request.method == "POST":
+        # Check if username exists in database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+    return redirect(url_for("register"))
 
 
 @app.route("/login", methods=["GET", "POST"])
