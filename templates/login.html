@@ -2,16 +2,22 @@
 {% block content %}
 
 <h1 class="page-title">{{ page_title }}</h1>
-
 <form>
   <div class="login-form-row">
-    <div class="col-sm-4">
-      <input type="text" class="form-control" placeholder="USERNAME" required>
+    <div class="col-sm-4" method="POST" action="{{ url_for('login') }}">
+      <label for="username">USERNAME</label>
+      <input type="text" class="form-control" placeholder="USERNAME" id="username" name="username" minlength="5" maxlength="15"
+      class="validate" required>
     </div>
     <div class="col-sm-4">
-      <input type="text" class="form-control" placeholder="PASSWORD" required>
+      <label for="username">PASSWORD</label>
+      <input type="text" class="form-control" placeholder="PASSWORD"  minlength="5" id="password" name="password" maxlength="15" class="validate" required>
     </div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">LOG IN
+      <i class="material-icons right"></i>
+  </button>
   </div>
 </form>
+
 
 {% endblock %}

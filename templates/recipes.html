@@ -4,7 +4,6 @@
 <h1 class="page-title">{{ page_title }}</h1>
 
 !-- Display all recipes -->
-<!-- If the amount of recipes is greater than 0 -->
 <!-- For loop to display all recipes from mongodb -->
 {% for recipe in recipes %}
 <div class="card mb-3" style="max-width: 1000px;">
@@ -22,20 +21,18 @@
                     <p>{{ ingredient }}</p>
                     <!-- Close loop -->
                     {% endfor %}
-                    </p>
-                </div>
-                <a href="#" class="btn btn-primary">METHOD</a>
+                </p>
             </div>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <em>Created by: {{ recipe.created_by }}</em>
+            </p>
+            </p>
+        </div>
     </div>
+
+</div>
+</div>
 </div>
 </div>
 {% endfor %}
-
-
-
-
-
-
 
 {% endblock %}
