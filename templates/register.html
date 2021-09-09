@@ -1,23 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="page-title">{{ page_title }}</h1>
-<form>
-  <div class="register-form-row">
-    <div class="col-sm-4" method="POST" action="{{ url_for('register') }}">
-      <label for="username">USERNAME</label>
-      <input type="text" class="form-control" placeholder="USERNAME" id="username" name="username" minlength="5" maxlength="15"
-      class="validate" required>
-    </div>
-    <div class="col-sm-4">
-      <label for="username">PASSWORD</label>
-      <input type="text" class="form-control" placeholder="PASSWORD"  minlength="5" id="password" name="password" maxlength="15" class="validate" required>
-    </div>
-    <button class="btn waves-effect waves-light" type="submit" name="action">REGISTER
-      <i class="material-icons right"></i>
-  </button>
+<div class="register-form-row">
+  <div class="col-sm-4 offset-2">
+  <h1>{{ page_title }}</h1>
   </div>
-</form>
-
+  <div class="row">
+      <form class="col-sm-4 offset-2" method="POST" action="{{ url_for('login') }}">
+          <div class="row">
+              <div class="input-field col-sm-6 offset-2">
+                  <label for="username">USERNAME</label>
+                  <input placeholder="LOG IN WITH YOUR USERNAME" name="username" minlength="5" maxlength="15" type="text" class="validate">
+              </div>
+          </div>
+          <div class="row">
+              <div class="input-field col-sm-6 offset-2">
+                  <label for="password">PASSWORD</label>
+                  <input name="password" minlength="5" maxlength="15" type="password" class="validate" required>
+              </div>
+          </div>
+          <div class="row">
+            <div class="input-field col-sm-6 offset-2">
+          <button class="btn waves-effect waves-light" type="submit" name="action">LOG IN
+              <i class="material-icons right"></i>
+          </button>
+  </div></div>
+  </div>
+  </form>
+  </div>
 
 {% endblock %}
