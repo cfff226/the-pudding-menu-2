@@ -1,43 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-<div class="row">
-    <form class="col-sm-4 offset-2" method="POST" action="{{ url_for('add_recipe') }}">
-        <h1>ADD YOUR RECIPE</h1>
-        <div id="form_options">
-            <input type="text" name="dessert_name" id="dessert_name" label for="dessert_name">Dessert
-            name</label>
-            <size="50" placeholder="DESSERT NAME">
-                <!-- ingredients -->
-        </div><br>
-        <div class="row">
-            <div class="col-sm-4">
-                            <a href="#" id="add_more_ingredients"><i class="fa fa-plus"></i>Add ingredients</a>
-    
-                        </div>
-                    </div>
-                <!-- instructions -->
-                            <a href="#" id="add_more_instructions"><i class="fa fa-plus"></i>Add
-                                instructions</a>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col s12 center-align">
-                            <a href="{{ url_for('get_recipes') }}" class="btn waves-effect waves-light grey darken-3">
-                                Cancel
-                                <i class="fas fa-times right"></i>
-                            </a>
-                            <button class="btn waves-effect waves-light pink darken-3" type="submit">ADD NEW RECIPE
-                                <i class="fas fa-check"></i>
-                            </button>
-                        </div>
-                    </div>
-            </div>
+<div class="overlay"></div>
+<form class="col-sm-4 offset-2" method="POST" action="{{ url_for('add_recipe') }}">
+    <h1>ADD YOUR RECIPE</h1>
+    <div id="form_options">
+        <input type="text" name="dessert_name" id="dessert_name" size="50" placeholder="DESSERT NAME">
+        <!-- ingredients -->
+            <a href="#" id="add_more_ingredients"><i class="fa fa-plus"></i>Add ingredients</a>
+            <a href="#" id="remove_ingredient"><i class="fa fa-plus"></i>Remove Field</a>
         </div>
-</div>
+    <!-- instructions -->
+    <a href="#" id="add_more_instructions"><i class="fa fa-plus"></i>Add
+        instructions</a>
+        <a href="#" id="remove_instruction"><i class="fa fa-plus"></i>Remove Field</a>
+    <br>
+    <!-- Add dessert image url-->
+    <div class="row">
+        <label for="dessert_image">ADD THE IMAGE ADDRESS/URL HERE</label>
+        <div class="input-field col s12">
+            <textarea id="dessert_image" name="dessert_image" placeholder="INPUT IMAGE URL HERE" class="validate"
+                required></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('get_recipes') }}" class="btn waves-effect waves-light grey darken-3">
+                Cancel
+                <i class="fas fa-times right"></i>
+            </a>
+            <button class="btn waves-effect waves-light pink darken-3" type="submit">ADD NEW RECIPE
+                <i class="fas fa-check"></i>
+            </button>
+        </div>
+    </div>
+</form>
 
 <!-- Code taken from https://www.youtube.com/watch?v=MLBLsxcB3Dc and edited for this -->
 
@@ -45,7 +42,8 @@
     var form_options = document.getElementById("form_options");
     var dessert_ingredients = document.getElementById("add_more_ingredients");
     var dessert_instructions = document.getElementById("add_more_instructions");
-    var remove_fields = document.getElementById("remove_fields");
+    var remove_ingredient = document.getElementById("remove_ingredient");
+    var remove_instruction = document.getElementById("remove_instruction");
 
     dessert_ingredients.onclick = function () {
         var newField = document.createElement('input');
@@ -68,6 +66,22 @@
         newField.setAttribute('placeholder', 'Another Field');
         dessert_instructions.appendChild(newField)
     }
+
+remove_ingredient.onclick = function(){
+    var input_tags = form_options.getElementsByTagName('input');
+    if(input_tags.length > 2) {
+        form_options.removeChild(input_tags[(input_tags.length)])
+    }
+}
+
+remove_instruction.onclick = function(){
+    var input_tags = form_options.getElementsByTagName('input');
+    if(input_tags.length > 2) {
+        form_options.removeChild(input_tags[(input_tags.length)])
+    }
+}
+
+
 
 </script>
 
