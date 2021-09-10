@@ -1,23 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="overlay"></div>
 
-!-- Display all recipes -->
+<h1 class="page-title">{{ page_title }}</h1>
+<h1>Scroll down on each image for more details</h1>
+
 <!-- For loop to display all recipes from mongodb -->
 <h1>Welcome {{ username }}</h1>
 <!-- If the amount of recipes is greater than 0 -->
 {% if recipes|length > 0 %}
 <!-- For loop to display all recipes from mongodb -->
 {% for recipe in recipes %}
-<div class="card mb-3" style="max-width: 1000px;">
-    <div class="row no-gutters">
-        <div class="col-md-4">
-            <img src="{{ recipe.dessert_image }}" class="recipe-card-img" alt="An image of {{ recipe.dessert_name }}">
-        </div>
-        <div class="col-md-8">
+<div class="scrollable">
+    <div class="card" style="width: 300px;">
+        <div class="row">
+                <img src="{{ recipe.dessert_image }}" class="recipe-card-img"
+                    alt="An image of {{ recipe.dessert_name }}">
+            </div>
             <div class="card-body">
                 <h5 class="card-title">{{ recipe.dessert_name }}</h5>
-                <div class="card-text">
+                <p class="card-text">
                     <!-- For loop to loop through ingredients -->
                     <h5>Ingredients</h5>
                     {% for ingredient in recipe.dessert_ingredients %}
@@ -30,15 +33,14 @@
                     <p>{{ instruction }}</p>
                     <!-- Close loop -->
                     {% endfor %}
-
-                </div>
+                    <p>
+                        <em>Created by: {{ recipe.created_by }}</em>
+                    </p>
             </div>
-            <em>Created by: {{ recipe.created_by }}</em>
-
         </div>
     </div>
 </div>
 {% endfor %}
-{% endif %}
 
+{% endif %}
 {% endblock %}
