@@ -7,6 +7,10 @@ html {
 
 body {
     background: url("https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80") no-repeat center center fixed; 
+} 
+
+p {
+    font-size: 12px;
 }
 
 .overlay {
@@ -40,7 +44,6 @@ body {
     width: 50%;
     text-align: center;
     margin-left: 38%;
-    padding: 2px 15px 15px 15px;
     margin-top: 2%;
 }
 
@@ -70,17 +73,30 @@ body {
 /* recipe page */
 
 .recipe-card-img {
-    height: 300px;
-    width: 300px;
-    padding-left: unset;
+    height: 350px;
+    width: 350px;
 }
 
 .scrollable {
         position: relative;
-        overflow: scroll auto;
+        overflow-y: scroll auto;
+        overflow-x: hidden;
         height: 310px;
-        width: 600px;
 }
+
+.grid-container {
+    padding-top: 100px;
+      justify-content: center;
+      text-align: center;
+      display: block;
+  }
+  
+  .grid-item {
+      display: inline-block;
+      margin-bottom: 20px;
+      position: relative;
+  }
+
 
 /* add a recipe */
 
