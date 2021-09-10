@@ -1,66 +1,75 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="add-recipe-container">
-    <h1>{{ page_title }}</h1>
-    <div class="row card-panel black">
-        <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
-            <!--Add desert name -->
-            <div class="row">
-                <label for="dessert_name">DESSERT NAME</label>
-                <div class="input-field col s12">
-                    <textarea id="dessert_name" placeholder="DESSERT NAME" name="dessert_name" class="materialize-textarea validate"
-                        required></textarea>
-                </div>
-            </div>
-            <!--Add dessert ingredients -->
-            <div class="row">
-                 <label for="dessert_ingredients">LIST THE INGREDIENTS HERE</label>
-                <div class="input_ingred_wrap col s12">
-                    <textarea id="dessert_ingredients" placeholder="INGREDIENTS" name="dessert_ingredients"
-                        class="materialize-textarea"></textarea>
-                    <button class="add_ingredient_button">ADD FIELDS</button>
-                    <div>
-                        <name="mytext[]">
+
+<div class="row">
+    <form class="col-sm-4 offset-2" method="POST" action="{{ url_for('add_recipe') }}">
+        <h1>ADD YOUR RECIPE</h1>
+        <div id="form_options">
+            <input type="text" name="dessert_name" id="dessert_name" label for="dessert_name">Dessert
+            name</label>
+            <size="50" placeholder="DESSERT NAME">
+                <!-- ingredients -->
+        </div><br>
+        <div class="row">
+            <div class="col-sm-4">
+                            <a href="#" id="add_more_ingredients"><i class="fa fa-plus"></i>Add ingredients</a>
+    
+                        </div>
                     </div>
-                </div>
-            </div>
-                    <!--Add dessert instructions -->
+                <!-- instructions -->
+                            <a href="#" id="add_more_instructions"><i class="fa fa-plus"></i>Add
+                                instructions</a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
                     <div class="row">
-                        <label for="dessert_instruction">LIST THE METHOD HERE</label>
-                        <div class="input_instruc_wrap col s12">
-                            <textarea id="dessert_instructions" placeholder="INSTRUCTIONS" name="dessert_instructions"
-                                class="materialize-textarea"></textarea>
-                            <button class="add_instruction_button">ADD FIELDS</button>
-                            <div>
-                                <name="mytext[]">
-                            </div>
-                            </div>
+                        <div class="col s12 center-align">
+                            <a href="{{ url_for('get_recipes') }}" class="btn waves-effect waves-light grey darken-3">
+                                Cancel
+                                <i class="fas fa-times right"></i>
+                            </a>
+                            <button class="btn waves-effect waves-light pink darken-3" type="submit">ADD NEW RECIPE
+                                <i class="fas fa-check"></i>
+                            </button>
                         </div>
-                        <!-- Add dessert image url-->
-                        <div class="row">
-                            <label for="dessert_image">ADD THE IMAGE ADDRESS/URL HERE</label>
-                            <div class="input-field col s12">
-                                <textarea id="dessert_image" name="dessert_image" placeholder="INPUT IMAGE URL HERE" class="materialize-textarea validate"
-                                    required></textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s12 center-align">
-                                <a href="{{ url_for('get_recipes') }}"
-                                    class="btn waves-effect waves-light grey darken-3">
-                                    Cancel
-                                    <i class="fas fa-times right"></i>
-                                </a>
-                                <button class="btn waves-effect waves-light pink darken-3" type="submit">ADD NEW RECIPE
-                                    <i class="fas fa-check"></i>
-                                </button>
-                                </div>
-                            </div>
-                </div>
-                </div>
-                </div>
-        </form>
+                    </div>
+            </div>
+        </div>
+</div>
+
+<!-- Code taken from https://www.youtube.com/watch?v=MLBLsxcB3Dc and edited for this -->
+
+<script>
+    var form_options = document.getElementById("form_options");
+    var dessert_ingredients = document.getElementById("add_more_ingredients");
+    var dessert_instructions = document.getElementById("add_more_instructions");
+    var remove_fields = document.getElementById("remove_fields");
+
+    dessert_ingredients.onclick = function () {
+        var newField = document.createElement('input');
+        newField.setAttribute('type', 'text');
+        newField.setAttribute('name', 'dessert_ingredients');
+        newField.setAttribute('class', 'dessert_ingredients');
+        newField.setAttribute('label', 'dessert_ingredients');
+        newField.setAttribute('size', 50);
+        newField.setAttribute('placeholder', 'Another Field');
+        dessert_ingredients.appendChild(newField)
+    }
+
+    dessert_instructions.onclick = function () {
+        var newField = document.createElement('input');
+        newField.setAttribute('type', 'text');
+        newField.setAttribute('name', 'dessert_instructions');
+        newField.setAttribute('class', 'dessert_instructions');
+        newField.setAttribute('label', 'dessert_instructions');
+        newField.setAttribute('size', 50);
+        newField.setAttribute('placeholder', 'Another Field');
+        dessert_instructions.appendChild(newField)
+    }
+
+</script>
 
 
-        {% endblock %}
+{% endblock %}

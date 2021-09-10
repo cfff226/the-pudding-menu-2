@@ -20,7 +20,7 @@ body {
 }
 
 .nav-item {
-    color: white
+    margin-left: 20px;
 }
 
 /* home page */
@@ -70,6 +70,10 @@ body {
     width: 400px;
 }
 
+/* add a recipe */
 
+.input-field {
+    list-style-type: square;
+}
 
 

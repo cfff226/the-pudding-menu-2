@@ -76,7 +76,7 @@ def login():
                 # Invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login", _external=True,
-                scheme='https'))
+                                scheme='https'))
 
         else:
             # Username does not exist
@@ -97,6 +97,29 @@ def logout():
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
     return render_template("profile.html", page_title="Profile")
+
+
+@app.route("/add_recipe", methods=["GET", "POST"])
+def add_recipe():
+    # Get users form input and send to database
+    if request.method == "POST":
+        dessert_ingredients = request.form.getlist("dessert_ingredients")
+        print(f'INGREDIENTS: {dessert_ingredients}')
+        dessert_instructions = request.form.getlist("dessert_instructions")
+        print(f'INSTRUCTIONS: {dessert_instructions}')
+        dessert_recipe = {
+            "dessert_name": request.form.get("dessert_name"),
+            "dessert_image": request.form.get("dessert_image"),
+            "dessert_ingredients": dessert_ingredients,
+            "dessert_instructions": dessert_instructions,
+            "created_by": session["user"]
+        }
+        # Post users input to Mongodb
+        mongo.db.recipes.insert_one(dessert_recipe)
+        flash("Thanks! Your recipe has been added")
+        return redirect(url_for("profile", username=session["user"]))
+
+    return render_template("add_recipe.html")
 
 
 if __name__ == "__main__":
