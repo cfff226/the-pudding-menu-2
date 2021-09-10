@@ -9,12 +9,12 @@
         <!-- ingredients -->
             <a href="#" id="add_more_ingredients"><i class="fa fa-plus"></i>Add ingredients</a>
             <a href="#" id="remove_ingredient"><i class="fa fa-plus"></i>Remove Field</a>
-        </div>
+            <br><br>
     <!-- instructions -->
     <a href="#" id="add_more_instructions"><i class="fa fa-plus"></i>Add
         instructions</a>
         <a href="#" id="remove_instruction"><i class="fa fa-plus"></i>Remove Field</a>
-    <br>
+    <br></div><br>
     <!-- Add dessert image url-->
     <div class="row">
         <label for="dessert_image">ADD THE IMAGE ADDRESS/URL HERE</label>
@@ -35,6 +35,7 @@
         </div>
     </div>
 </form>
+
 
 <!-- Code taken from https://www.youtube.com/watch?v=MLBLsxcB3Dc and edited for this -->
 
@@ -70,14 +71,15 @@
 remove_ingredient.onclick = function(){
     var input_tags = form_options.getElementsByTagName('input');
     if(input_tags.length > 2) {
-        form_options.removeChild(input_tags[(input_tags.length)])
+        dessert_ingredients.removeChild(input_tags[(input_tags.length - 1)])
     }
 }
+console.log(remove_ingredient)
 
 remove_instruction.onclick = function(){
     var input_tags = form_options.getElementsByTagName('input');
     if(input_tags.length > 2) {
-        form_options.removeChild(input_tags[(input_tags.length)])
+        dessert_instructions.removeChild(input_tags[(input_tags.length - 1)])
     }
 }
 
