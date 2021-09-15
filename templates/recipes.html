@@ -33,6 +33,13 @@
                         <p>
                             <em>Created by: {{ recipe.created_by }}</em>
                         </p>
+                            <!-- Edit button for existing recipe -->
+                    {% if session.user|lower == recipe.created_by|lower %}
+                    <a href="{{ url_for('edit_recipe', recipes_id=recipe._id ) }}" class="btn btn-primary btn-lg active"
+                        role="button" aria-pressed="true">EDIT</a>
+                    <a href="/"
+                        class="btn btn-primary btn-lg active" role="button" aria-pressed="true">DELETE</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
