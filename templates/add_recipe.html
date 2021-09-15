@@ -2,6 +2,7 @@
 {% block content %}
 
 <div class="overlay"></div>
+<div class="add-recipe-container">
 <form class="col-sm-4 offset-2" method="POST" action="{{ url_for('add_recipe') }}">
     <h1>ADD YOUR RECIPE</h1>
     <div id="form_options">
@@ -35,6 +36,7 @@
         </div>
     </div>
 </form>
+</div>
 
 
 <!-- Code taken from https://www.youtube.com/watch?v=MLBLsxcB3Dc and edited for this -->

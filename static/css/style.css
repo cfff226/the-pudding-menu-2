@@ -1,13 +1,11 @@
-
-
 html {
     color: white;
     font-family: 'Rubik', sans-serif;
 }
 
 body {
-    background: url("https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80") no-repeat center center fixed; 
-} 
+    background: url("https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80") no-repeat center center fixed;
+}
 
 p {
     font-size: 12px;
@@ -18,19 +16,19 @@ h1 {
 }
 
 .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: #c3dffaef;
-	z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: #c3dffaef;
+    z-index: -1;
 }
 
 /* navbar */
 .navbar {
     background-color: black;
-    
+
 }
 
 .navbar-brand {
@@ -43,7 +41,7 @@ h1 {
 
 /* search bar */
 
-.form-inline > :only-child {
+.form-inline> :only-child {
     padding-right: 2%;
 }
 
@@ -82,12 +80,10 @@ h1 {
 
 /* recipe page */
 
-.recipe-card-body {
+.home-card-body {
     border: 1px solid black;
     padding: 10px;
 }
-
-
 
 .recipe-card-img {
     height: 350px;
@@ -95,30 +91,39 @@ h1 {
 }
 
 .scrollable {
-        position: relative;
-        overflow-y: scroll auto;
-        overflow-x: hidden;
-        height: 310px;
+    position: relative;
+    overflow-y: scroll auto;
+    overflow-x: hidden;
+    height: 310px;
 }
 
 .grid-container {
     padding-top: 100px;
-      justify-content: center;
-      text-align: center;
-      display: block;
-  }
-  
-  .grid-item {
-      display: inline-block;
-      margin-bottom: 20px;
-      position: relative;
-  }
+    justify-content: center;
+    text-align: center;
+    display: block;
+}
+
+.grid-item {
+    display: inline-block;
+    margin-bottom: 20px;
+    position: relative;
+}
 
 
 /* add a recipe */
+
+.add-recipe-container {
+    margin-top: 8%;
+}
 
 .input-field {
     list-style-type: square;
 }
 
+/* edit a recipe */
+
+.edit-recipe-container {
+    margin-top: 8%;
+}
 

@@ -3,6 +3,7 @@
 
 
 <div class="overlay"></div>
+<div class="edit-recipe-container">
 <form class="col-sm-4 offset-2" method="POST" action="{{ url_for('edit_recipe', recipes_id=recipes._id) }}">
     <h1>EDIT YOUR RECIPE</h1>
     <div id="form_options">
@@ -66,6 +67,7 @@
                 </div>
             </div>
 </form>
+</div>
 
 
 <!-- Code taken from https://www.youtube.com/watch?v=MLBLsxcB3Dc and edited for this -->
