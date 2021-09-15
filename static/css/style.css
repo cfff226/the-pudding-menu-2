@@ -13,6 +13,10 @@ p {
     font-size: 12px;
 }
 
+h1 {
+    margin-left: 20%;
+}
+
 .overlay {
 	height: 100%;
 	width: 100%;
@@ -77,6 +81,13 @@ p {
 }
 
 /* recipe page */
+
+.recipe-card-body {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
 
 .recipe-card-img {
     height: 350px;
