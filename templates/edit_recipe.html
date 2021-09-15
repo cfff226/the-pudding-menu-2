@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="overlay"></div>
+<form class="col-sm-4 offset-2" method="POST" action="{{ url_for('edit_recipe', recipes_id=recipes._id) }}">
+    <h1>EDIT YOUR RECIPE</h1>
+    <div id="form_options">
+        <input type="text" name="dessert_name" id="dessert_name" size="50" placeholder="DESSERT NAME">
+        <!-- Loop through list of ingredients -->
+        {% for ingred in recipes.dessert_ingredients|list %}
+        <div class="row">
+            <label for="dessert_ingredients{{loop.index}}">Ingredient {{loop.index}}:</label>
+            <div class="input-field col s12">
+                <input id="dessert_ingredients{{loop.index}}" name="dessert_ingredients" minlength="2" maxlength="60"
+                    type="text" value="{{ ingred }}" class="validate" required>
+            </div>
+        </div>
+        {% endfor %}
+        <!--Edit dessert ingredients -->
+        <div class="row">
+            <div class="input_ingred_wrap col s12">
+                <!-- ingredients -->
+                <a href="#" id="add_more_ingredients"><i class="fa fa-plus"></i>Add ingredients</a>
+                <a href="#" id="remove_ingredient"><i class="fa fa-plus"></i>Remove Field</a>
+                <br><br>
+                <div>
+                </div>
+    <!-- Loop through list of instructions -->
+    {% for ingred in recipes.dessert_instructions|list %}
+    <div class="row">
+        <label for="dessert_instructions{loop.index}}">Instruction {{loop.index}}:</label>
+        <div class="input-field col s12">
+            <input id="dessert_instructions{{loop.index}}" name="dessert_instructions" minlength="2" maxlength="60"
+                type="text" value="{{instruc}}" class="validate" required>
+        </div>
+    </div>
+    {% endfor %}
+    <!--Edit dessert instructions -->
+    <div class="row">
+        <div class="input_ingred_wrap col s12">
+            <!-- ingredients -->
+            <a href="#" id="add_more_instructions"><i class="fa fa-plus"></i>Add instructions</a>
+            <a href="#" id="remove_instruction"><i class="fa fa-plus"></i>Remove Field</a>
+            <br><br>
+            <div>
+            </div>
+
+            <!-- Edit dessert image url-->
+            <div class="row">
+                <label for="dessert_image">EDIT THE IMAGE ADDRESS/URL HERE</label>
+                <div class="input-field col s12">
+                    <textarea id="dessert_image" name="dessert_image" placeholder="INPUT IMAGE URL HERE"
+                        class="validate" required></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <a href="{{ url_for('get_recipes') }}" class="btn waves-effect waves-light grey darken-3">
+                        Cancel
+                        <i class="fas fa-times right"></i>
+                    </a>
+                    <button class="btn waves-effect waves-light pink darken-3" type="submit">ADD NEW RECIPE
+                        <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </div>
+</form>
+
+
+<!-- Code taken from https://www.youtube.com/watch?v=MLBLsxcB3Dc and edited for this -->
+
+<script>
+    var form_options = document.getElementById("form_options");
+    var dessert_ingredients = document.getElementById("add_more_ingredients");
+    var dessert_instructions = document.getElementById("add_more_instructions");
+    var remove_ingredient = document.getElementById("remove_ingredient");
+    var remove_instruction = document.getElementById("remove_instruction");
+
+    dessert_ingredients.onclick = function () {
+        var newField = document.createElement('input');
+        newField.setAttribute('type', 'text');
+        newField.setAttribute('name', 'dessert_ingredients');
+        newField.setAttribute('class', 'dessert_ingredients');
+        newField.setAttribute('label', 'dessert_ingredients');
+        newField.setAttribute('size', 50);
+        newField.setAttribute('placeholder', 'Another Field');
+        dessert_ingredients.appendChild(newField)
+    }
+
+    dessert_instructions.onclick = function () {
+        var newField = document.createElement('input');
+        newField.setAttribute('type', 'text');
+        newField.setAttribute('name', 'dessert_instructions');
+        newField.setAttribute('class', 'dessert_instructions');
+        newField.setAttribute('label', 'dessert_instructions');
+        newField.setAttribute('size', 50);
+        newField.setAttribute('placeholder', 'Another Field');
+        dessert_instructions.appendChild(newField)
+    }
+
+    remove_ingredient.onclick = function () {
+        var input_tags = form_options.getElementsByTagName('input');
+        if (input_tags.length > 2) {
+            dessert_ingredients.removeChild(input_tags[(input_tags.length - 1)])
+        }
+    }
+    console.log(remove_ingredient)
+
+    remove_instruction.onclick = function () {
+        var input_tags = form_options.getElementsByTagName('input');
+        if (input_tags.length > 2) {
+            dessert_instructions.removeChild(input_tags[(input_tags.length - 1)])
+        }
+    }
+</script>
+
+{% endblock %}
