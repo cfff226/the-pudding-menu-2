@@ -37,6 +37,12 @@ p {
     margin-left: 20px;
 }
 
+/* search bar */
+
+.form-inline > :only-child {
+    padding-right: 2%;
+}
+
 /* home page */
 
 .card {

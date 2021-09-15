@@ -51,16 +51,16 @@
                 </li>
                 {% endif %}
             </ul>
-            <form class="form-inline my-2 my-lg-0" action="{{ url_for('search') }}" method="POST">
-                <input class="form-control mr-sm-2" type="search" name="search" placeholder="SEARCH FOR A RECIPE"
-                    aria-label="search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SEARCH</button>
-                <!-- Search and Clear buttons -->
-                <div class="col s12 small-btns">
-                    <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn-clear">CLEAR</a>
-                </div>
-            </form>
         </div>
+    <div class="search-bar">
+        <form class="form-inline" action="{{ url_for('search') }}" method="POST">
+            <input class="form-control search" type="search" name="search" placeholder="SEARCH"
+                aria-label="search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SEARCH</button>
+            <!-- Search and Clear buttons -->
+        
+        </form>
+    </div>
     </nav>
 
 
