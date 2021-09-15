@@ -112,6 +112,16 @@ def profile(username):
         return redirect(url_for("login", page_title="Login Page"))
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    # User is able to search through Dessert list using search bar
+    search_term = request.form["search"]
+    print(search_term)
+    recipe = list(mongo.db.recipes.find({"$text": {"$search": search_term}}))
+    print(recipe)
+    return render_template("recipes.html", recipes=recipe)
+
+
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     # Get users form input and send to database
