@@ -12,7 +12,13 @@ p {
 }
 
 h1 {
+    margin-left: 10%;
+    color: black;
+}
+
+h5 {
     margin-left: 20%;
+    padding-top: 5%;
 }
 
 .overlay {
@@ -21,13 +27,14 @@ h1 {
     top: 0;
     left: 0;
     position: fixed;
-    background: #c3dffaef;
+    background: #a4f9ffef;
     z-index: -1;
 }
 
 /* navbar */
+
 .navbar {
-    background-color: black;
+    color: black;
 
 }
 
@@ -53,6 +60,13 @@ h1 {
     text-align: center;
     margin-left: 38%;
     margin-top: 2%;
+}
+
+.home-card-title {
+   padding-right: 10%;
+   text-align: left;
+   margin-left: unset;
+   padding-left: 10%;
 }
 
 /* page titles */
@@ -86,8 +100,8 @@ h1 {
 }
 
 .recipe-card-img {
-    height: 350px;
-    width: 350px;
+    height: 320px;
+    width: 485px;
 }
 
 .scrollable {

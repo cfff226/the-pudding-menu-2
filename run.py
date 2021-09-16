@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route('/index')
 def index():
-    return render_template("index.html", page_title="Home")
+    return render_template("index.html", page_title="HOME")
 
 
 @app.route('/get_recipes')
@@ -29,7 +29,7 @@ def index():
 def get_recipes():
     recipe = list(mongo.db.recipes.find())
     print(recipe)
-    return render_template("recipes.html", page_title="Recipes", recipes=recipe)
+    return render_template("recipes.html", page_title="RECIPES", recipes=recipe)
 
 
 @ app.route("/register", methods=["GET", "POST"])
@@ -53,7 +53,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration successful!")
         return redirect(url_for("profile", username=session["user"]))
-    return render_template("register.html", page_title="Register")
+    return render_template("register.html", page_title="REGISTER")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -83,7 +83,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login", _external=True, _scheme='https'))
 
-    return render_template("login.html", page_title="Log In")
+    return render_template("login.html", page_title="LOG IN")
 
 
 @app.route("/logout")
@@ -91,7 +91,7 @@ def logout():
     # Remove user from session cookies
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("login", page_title="Login Page"))
+    return redirect(url_for("login", page_title="LOGIN PAGE"))
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -109,7 +109,7 @@ def profile(username):
             username=username,
             recipes=recipe)
     else:
-        return redirect(url_for("login", page_title="Login Page"))
+        return redirect(url_for("login", page_title="LOGIN"))
 
 
 @app.route("/search", methods=["GET", "POST"])
