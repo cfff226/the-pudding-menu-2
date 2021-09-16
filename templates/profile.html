@@ -5,15 +5,13 @@
 
 <h1 class="page-title">{{ page_title }}</h1>
 <h1>Scroll down on each image for more details</h1>
-<div class="grid-container">
 <!-- For loop to display all recipes from mongodb -->
 <h1>Welcome {{ username }}</h1>
 <!-- If the amount of recipes is greater than 0 -->
 {% if recipes|length > 0 %}
 <!-- For loop to display all recipes from mongodb -->
 {% for recipe in recipes %}
-<div class="scrollable">
-    <div class="grid-item">
+<div class="scrollabl-card">
     <div class="card text-left" style="width: 350px;">
         <div class="row">
                 <img src="{{ recipe.dessert_image }}" class="recipe-card-img"

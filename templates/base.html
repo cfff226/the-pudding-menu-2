@@ -17,7 +17,7 @@
 <body>
 
     <!-- Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="{{ url_for('index') }}">THE PUDDING MENU</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +56,7 @@
         <form class="form-inline" action="{{ url_for('search') }}" method="POST">
             <input class="form-control search" type="search" name="search" placeholder="SEARCH"
                 aria-label="search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">SEARCH</button>
+            <button class="btn" type="submit"><h6>SEARCH</h6></button>
             <!-- Search and Clear buttons -->
         
         </form>

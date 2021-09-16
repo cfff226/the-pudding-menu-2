@@ -1,6 +1,7 @@
 html {
     color: white;
     font-family: 'Rubik', sans-serif;
+    overflow-x: hidden;
 }
 
 body {
@@ -11,7 +12,7 @@ p {
     font-size: 12px;
 }
 
-h1 {
+h3 {
     margin-left: 10%;
     color: black;
 }
@@ -27,10 +28,14 @@ h5 {
     top: 0;
     left: 0;
     position: fixed;
-    background: #a4f9ffef;
+    background: darkgray;
     z-index: -1;
 }
 
+.btn > h6 {
+    color: white;
+    padding-top: 5%;
+}
 /* navbar */
 
 .navbar {
@@ -42,8 +47,14 @@ h5 {
     color: white;
 }
 
-.nav-item {
+.nav-item > a {
     margin-left: 20px;
+    color:lightblue;
+}
+
+.nav-item > a:hover {
+    color:white;
+    text-decoration: none;
 }
 
 /* search bar */
@@ -60,6 +71,8 @@ h5 {
     text-align: center;
     margin-left: 38%;
     margin-top: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
 .home-card-title {
@@ -104,26 +117,12 @@ h5 {
     width: 485px;
 }
 
-.scrollable {
+.scrollable-card {
     position: relative;
     overflow-y: scroll auto;
     overflow-x: hidden;
     height: 310px;
 }
-
-.grid-container {
-    padding-top: 100px;
-    justify-content: center;
-    text-align: center;
-    display: block;
-}
-
-.grid-item {
-    display: inline-block;
-    margin-bottom: 20px;
-    position: relative;
-}
-
 
 /* add a recipe */
 
