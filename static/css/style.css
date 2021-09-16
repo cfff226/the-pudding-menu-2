@@ -32,6 +32,16 @@ h5 {
     z-index: -1;
 }
 
+.card {
+    background-color: black;
+    width: 50%;
+    text-align: center;
+    margin-left: 38%;
+    margin-top: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
 .btn > h6 {
     color: white;
     padding-top: 5%;
@@ -65,14 +75,9 @@ h5 {
 
 /* home page */
 
-.card {
-    background-color: black;
-    width: 50%;
-    text-align: center;
-    margin-left: 38%;
-    margin-top: 2%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+.home-card-body {
+    border: 1px solid black;
+    padding: 10px;
 }
 
 .home-card-title {
@@ -107,14 +112,9 @@ h5 {
 
 /* recipe page */
 
-.home-card-body {
-    border: 1px solid black;
-    padding: 10px;
-}
-
 .recipe-card-img {
-    height: 320px;
-    width: 485px;
+    height: 450px;
+    width: 450px;
 }
 
 .scrollable-card {
@@ -122,6 +122,7 @@ h5 {
     overflow-y: scroll auto;
     overflow-x: hidden;
     height: 310px;
+    display: inline-block;
 }
 
 /* add a recipe */
