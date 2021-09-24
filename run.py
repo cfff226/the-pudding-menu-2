@@ -32,6 +32,12 @@ def get_recipes():
     return render_template("recipes/recipes.html", page_title="RECIPES", recipes=recipe)
 
 
+@app.route('/recipe/<recipe_id>')
+# Retrieve recipe data from mongodb
+def recipe(recipe_id):
+    return render_template("recipes/recipe.html", recipe=recipe)
+
+
 @ app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

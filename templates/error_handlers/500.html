@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card text-center">
+    <div class="card-header">
+        Error message
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">500 - Internal server error</h5>
+        <p class="card-text">Sorry, there is an internal issue with the page you are looking for.</p>
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Go back to homepage</a>
+    </div>
+</div>
+
+{% endblock %}

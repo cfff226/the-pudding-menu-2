@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card text-center">
+    <div class="card-header">
+        Error message
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">403 - Forbidden</h5>
+        <p class="card-text">For some reason, you are unable to view this page</p>
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Go back to homepage</a>
+    </div>
+</div>
+
+
+{% endblock %}
