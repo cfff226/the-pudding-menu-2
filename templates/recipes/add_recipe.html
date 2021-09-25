@@ -3,39 +3,54 @@
 
 <div class="overlay"></div>
 <div class="add-recipe-container">
-<form class="col-sm-4 offset-2" method="POST" action="{{ url_for('add_recipe') }}">
-    <h1>ADD YOUR RECIPE</h1>
-    <div id="form_options">
-        <input type="text" name="dessert_name" id="dessert_name" size="50" placeholder="DESSERT NAME">
-        <!-- ingredients -->
-        <a href="#" id="add_more_ingredients"><i class="fa fa-plus"></i>Add ingredients</a>
-        <a href="#" id="remove_ingredient"><i class="fa fa-plus"></i>Remove Field</a>
-        <br><br>
-        <!-- instructions -->
-        <a href="#" id="add_more_instructions"><i class="fa fa-plus"></i>Add
-            instructions</a>
-        <a href="#" id="remove_instruction"><i class="fa fa-plus"></i>Remove Field</a>
-        <br></div><br>
-    <!-- Add dessert image url-->
-    <div class="row">
-        <label for="dessert_image">ADD THE IMAGE ADDRESS/URL HERE</label>
-        <div class="input-field col s12">
-            <textarea id="dessert_image" name="dessert_image" placeholder="INPUT IMAGE URL HERE" class="validate"
-                required></textarea>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s12 center-align">
-            <a href="{{ url_for('get_recipes') }}" class="btn waves-effect waves-light grey darken-3">
-                Cancel
-                <i class="fas fa-times right"></i>
-            </a>
-            <button class="btn waves-effect waves-light pink darken-3" type="submit">ADD NEW RECIPE
-                <i class="fas fa-check"></i>
-            </button>
-        </div>
-    </div>
-</form>
+    <form class="col-sm-4 offset-2" method="POST" action="{{ url_for('add_recipe') }}">
+        <h1>ADD YOUR RECIPE</h1>
+        <div id="form_options">
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="text" name="dessert_name" id="dessert_name" size="50" placeholder="DESSERT NAME">
+                </div>
+            </div>
+            <br>
+            <!-- ingredients -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="#" id="add_more_ingredients"><i class="fa fa-plus"></i>Add ingredients</a>
+                    <a href="#" id="remove_ingredient"><i class="fa fa-plus"></i>Remove Field</a>
+                    <br><br>
+                </div>
+            </div>
+            <!-- instructions -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="#" id="add_more_instructions"><i class="fa fa-plus"></i>Add
+                        instructions</a>
+                    <a href="#" id="remove_instruction"><i class="fa fa-plus"></i>Remove Field</a>
+                    <br>
+                </div>
+            </div><br>
+            <!-- Add dessert image url-->
+            <div class="row">
+                <div class="col-sm-12">
+                    <label for="dessert_image">ADD THE IMAGE ADDRESS/URL HERE</label>
+                    <div class="input-field">
+                        <textarea id="dessert_image" name="dessert_image" placeholder="INPUT IMAGE URL HERE"
+                            class="validate" required></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <a href="{{ url_for('get_recipes') }}" class="btn waves-effect waves-light grey darken-3">
+                        Cancel
+                        <i class="fas fa-times right"></i>
+                    </a>
+                    <button class="btn waves-effect waves-light pink darken-3" type="submit">ADD NEW RECIPE
+                        <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </div>
+    </form>
 </div>
 
 

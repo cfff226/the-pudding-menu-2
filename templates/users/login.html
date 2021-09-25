@@ -1,34 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="overlay"></div>
 
-<div class="login-form-row">
-  <div class="col-sm-8 offset-2">
-    <h1>{{ page_title }}</h1>
-  </div>
-  <div class="row">
-    <form class="col-sm-4 offset-2" method="POST" action="{{ url_for('login') }}">
-      <div class="row">
-        <div class="input-field col-sm-8 offset-2">
-          <label for="username">USERNAME</label>
-          <input placeholder="LOGIN WITH USERNAME" name="username" minlength="5" maxlength="15" type="text"
-            class="validate">
+<div class="login-container">
+  <div class="login-form-row">
+    <div class="col-sm-12 offset-2">
+      <h1>{{ page_title }}</h1>
+      <h4>Please log in with your username and password</h4>
+    </div>
+    <div class="row">
+      <form class="col-sm-4 offset-2" method="POST" action="{{ url_for('login') }}">
+        <div class="row">
+          <div class="input-field col-sm-12 offset-2">
+            <label for="username">USERNAME</label>
+            <input placeholder="LOGIN WITH USERNAME" name="username" minlength="5" maxlength="15" type="text"
+              class="validate">
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col-sm-8 offset-2">
-          <label for="password">PASSWORD</label>
-          <input name="password" minlength="5" maxlength="15" type="password" class="validate" required>
+        <div class="row">
+          <div class="input-field col-sm-12 offset-2">
+            <label for="password">PASSWORD</label>
+            <input name="password" minlength="5" maxlength="15" type="password" class="validate" required>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col-sm-8 offset-2">
-          <button class="btn waves-effect waves-light" type="submit" name="action">LOG IN
-            <i class="material-icons right"></i>
-          </button>
+        <div class="row">
+          <div class="input-field col-sm-12 offset-2">
+            <button class="btn waves-effect waves-light" type="submit" name="action">LOG IN
+              <i class="material-icons right"></i>
+            </button>
+          </div>
         </div>
-      </div>
+    </div>
   </div>
   </form>
 </div>
-
+<div class="link-to-register-container">
+  <h4>Don't have an account just yet?</h4><a href="{{ url_for('register') }}">SIGN UP</a>
+</div>
 {% endblock %}

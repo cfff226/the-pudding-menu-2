@@ -89,7 +89,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login", _external=True, _scheme='https'))
 
-    return render_template("users/login.html", page_title="LOG IN")
+    return render_template("users/login.html", page_title="LOG IN/SIGN UP")
 
 
 @app.route("/logout")
