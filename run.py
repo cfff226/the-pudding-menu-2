@@ -18,18 +18,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
-@app.route('/index')
-def index():
-    return render_template("index.html", page_title="HOME")
-
-
-@app.route('/get_recipes')
+@app.route('/')
 # Retrieve recipe data from mongodb
-def get_recipes():
+def index():
     recipe = list(mongo.db.recipes.find())
     print(recipe)
-    return render_template("recipes/recipes.html", page_title="RECIPES", recipes=recipe)
+    return render_template("index.html", page_title="RECIPES", recipes=recipe)
 
 
 @app.route('/recipe/<recipe_id>')
@@ -125,7 +119,7 @@ def search():
     print(search_term)
     recipe = list(mongo.db.recipes.find({"$text": {"$search": search_term}}))
     print(recipe)
-    return render_template("recipes/recipes.html", recipes=recipe)
+    return render_template("index.html", recipes=recipe)
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])

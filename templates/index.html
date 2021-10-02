@@ -2,25 +2,28 @@
 
 {% block content %}
 
-
-<div class="home-card-container">
-    <div class="row">
-        <div class="col s4">
-            <div class="card" style="width: 18rem;">
-                <div class="home-card-body">
-                    <h5 class="home-card-title">THE PUDDING MENU</h5>
-                    <br>
-                    <p class="card-text">Welcome to The Pudding Menu, the place where you can find tasty pudding recipes
-                        and
-                        share your
-                        own</p>
-                    <a href="/register" class="card-link">REGISTER</a>
-                    <a href="/login" class="card-link">LOG IN</a>
-                </div>
-            </div>
+<div class="overlay"></div>
+<div class="information">
+    <h2>THE PUDDING MENU</h2>
+    <h3>SEARCH THROUGH THE CATALOGUE OF SOME OF THE TASTIEST DESSERT RECIPES</h3>
+    <h4>GOT ONE YOU WOULD LIKE TO SHARE? CREATE AN ACCOUNT/LOGIN</h4>
+</div>
+<div class="recipe-card-container offset-1">
+    <!-- For loop to display all recipes from mongodb -->
+    {% for recipe in recipes %}
+    <div class="recipe-card" style="width: 18rem;">
+        <img src="{{ recipe.dessert_image }}" class="recipe-card-img-top" alt="An image of {{ recipe.dessert_name }}">
+        <div class="recipe-card-body">
+            <h5 class="recipe-card-title">{{ recipe.dessert_name }}</h5>
+            <p class="recipe-card-text">Click below for the recipe and method</p>
+            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                <img class="img_recipe" src="{{ recipe.img_url}}" alt="recipe">
+                <span class="card-name">{{ recipe.recipe_name }}</span>
+            </a>
         </div>
     </div>
-</div>
+    {% endfor %}
 
 
-{% endblock %}
+
+    {% endblock %}
